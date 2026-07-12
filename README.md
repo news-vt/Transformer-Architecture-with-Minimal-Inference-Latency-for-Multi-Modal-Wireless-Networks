@@ -1,8 +1,8 @@
-# Multi-Modal Beam Prediction with a Mixture-of-Depths Transformer
+# Source code of https://ieeexplore.ieee.org/abstract/document/11534253
 
- The implementation of **mmWave beam prediction** on the
+We implement **mmWave beam prediction** on the
 [DeepSense 6G](https://www.deepsense6g.net/) multi-modal dataset
-(RGB camera + LiDAR + radar + GPS), using a **Mixture-of-Depths (MoD)** transformer.
+(RGB camera + LiDAR + radar + GPS), using our **Mixture-of-Depths (MoD)** transformer.
 
 Each sample is a sequence of **5 time steps**, and every step fuses four modalities
 (RGB image, LiDAR bird's-eye-view histogram, radar range–Doppler tokens, GPS position)
