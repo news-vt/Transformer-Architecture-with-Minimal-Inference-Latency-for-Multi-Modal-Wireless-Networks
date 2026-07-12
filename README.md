@@ -17,9 +17,10 @@ classified into one of the mmWave beam indices.
 
 ```
 .
-├── main.py         # Entry point: data pipeline (DeepSense 6G) + training driver
-├── training.py     # MoD model definition + training / evaluation loop
-├── batchjob.sh     # Slurm submission script
+├── main.py            # Entry point: data pipeline (DeepSense 6G) + training driver
+├── training.py        # MoD model definition + training / evaluation loop
+├── batchjob.sh        # Slurm submission script
+├── requirements.txt   # Pinned Python dependencies
 └── README.md
 ```
 
@@ -51,11 +52,12 @@ classified into one of the mmWave beam indices.
 conda create -n pmod python=3.9 -y
 conda activate pmod
 
-# CUDA build of PyTorch (match your CUDA toolkit)
-pip install torch==2.1.2 torchvision==0.16.2 --index-url https://download.pytorch.org/whl/cu121
-
-pip install open3d numpy pandas pillow wandb
+# installs pinned torch/torchvision (CUDA 12.1) + the rest
+pip install -r requirements.txt
 ```
+
+If your CUDA toolkit differs from 12.1, edit the `--extra-index-url` line (and the
+`torch`/`torchvision` versions) at the top of [requirements.txt](requirements.txt).
 
 ---
 
